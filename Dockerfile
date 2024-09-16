@@ -5,8 +5,6 @@ FROM openjdk:17-slim-buster
 # Define o diretório de trabalho
 WORKDIR /api/
 
-COPY ./config/ ./../
-
 # Copia o arquivo JAR
 COPY ./build/libs/COOPERFILME-API.jar ./COOPERFILME.jar
 
