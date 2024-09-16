@@ -71,3 +71,9 @@ create table cf_voto_roteiros
 
 alter table cf_voto_roteiros owner to cooperfilmes;
 
+
+INSERT INTO cf_usuarios (id, nome, email, perfil, senha, data_cadastro) VALUES ('01fd4794-376a-4ddd-9b62-16881db3aab1', 'Revisor', 'revisor@paulojr.me', 'R', '$2a$10$ClP/XM2lqSRUAnPkae5My.1yrA0yhh.UEpifR/bMWNApggAWhsINe', '2024-09-15 23:49:52.000000');
+INSERT INTO cf_usuarios (id, nome, email, perfil, senha, data_cadastro) VALUES ('39269eba-c772-4aac-aaca-156de27009e0', 'Aprovador', 'aprovador@paulojr.me', 'P', '$2a$10$ClP/XM2lqSRUAnPkae5My.1yrA0yhh.UEpifR/bMWNApggAWhsINe', '2024-09-15 23:49:52.000000');
+INSERT INTO cf_usuarios (id, nome, email, perfil, senha, data_cadastro) VALUES ('94939151-b9d1-4b68-85ce-5e4797f25544', 'Analista', 'analista@paulojr.me', 'A', '$2a$10$ClP/XM2lqSRUAnPkae5My.1yrA0yhh.UEpifR/bMWNApggAWhsINe', '2024-09-15 23:49:52.000000');
+
+
