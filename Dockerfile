@@ -9,5 +9,5 @@ WORKDIR /api/
 COPY ./build/libs/COOPERFILME-API.jar ./COOPERFILME.jar
 
 # Configuração do ponto de entrada
-ENTRYPOINT ["java", "-jar", "-Dfile.encoding=\"UTF-8\"", "COOPERFILME.jar"]
+ENTRYPOINT ["java", "-jar", "COOPERFILME.jar"]
 
