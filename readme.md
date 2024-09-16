@@ -8,6 +8,7 @@ API Backend Cooperfilmes
 > Gradle   
 > Docker  
 > Postgres  
+> Swagger  
 > Conceitos de Clean Arch e DDD  
 
 
@@ -29,6 +30,11 @@ Após finalizar build da imagem docker pode ser inicializado a aplicação utili
 cd sandbox
 docker compose up -d
 ```
+
+### Documentação
+
+Há uma documentação de endpoints disponivel após executar a aplicação em:
+http://localhost:8091/docs/swagger.html
 
 ### Usuarios
 Os usuarios listados são:
