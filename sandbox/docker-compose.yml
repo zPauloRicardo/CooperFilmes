@@ -11,3 +11,10 @@ services:
     ports:
       - "5432:5432"
     restart: unless-stopped
+
+  cooperfilmes-be:
+    container_name: backend-cooperfilmes
+    image: cooperfilmes
+    ports:
+      - "8091:8091"
+    restart: unless-stopped
