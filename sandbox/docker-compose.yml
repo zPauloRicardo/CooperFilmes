@@ -5,9 +5,11 @@ services:
     environment:
       POSTGRES_USER: cooperfilmes
       POSTGRES_PASSWORD: eureka
+      POSTGRES_DB: cooperfilmes
       PGDATA: /data/postgres
     volumes:
       - ./postgres/:/data/postgres
+      - ../database/:/docker-entrypoint-initdb.d/
     ports:
       - "5432:5432"
     restart: unless-stopped
