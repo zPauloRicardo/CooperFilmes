@@ -21,7 +21,7 @@ spring:
       idleTimeout: '30000'
       minimumIdle: '5'
       maximumPoolSize: '20'
-    url: jdbc:postgresql://localhost:5432/cooperfilmes
+    url: jdbc:postgresql://postgres:5432/cooperfilmes
     type: com.zaxxer.hikari.HikariDataSource
     username: cooperfilmes
     password: eureka
