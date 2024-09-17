@@ -11,6 +11,7 @@ import me.paulojr.cooperfilme.domain.shared.search.Pagination;
 import me.paulojr.cooperfilme.infra.contexts.script.core.persistence.ScriptJpaEntity;
 import me.paulojr.cooperfilme.infra.contexts.customer.persistence.CustomerJpaEntity;
 import me.paulojr.cooperfilme.infra.contexts.script.core.persistence.ScriptJpaRepository;
+import me.paulojr.cooperfilme.infra.utils.SqlUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,6 +23,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 import static me.paulojr.cooperfilme.infra.utils.SpecificationUtils.equal;
+import static me.paulojr.cooperfilme.infra.utils.SpecificationUtils.equalDate;
 
 @Component
 @RequiredArgsConstructor(onConstructor_ = @__(@Autowired))
@@ -82,13 +84,13 @@ public class ScriptJpaGateway implements ScriptGateway {
             specifications = spec;
         }
         if (aQuery.creationDate() != null) {
-            Specification<ScriptJpaEntity> spec = equal("dataCadastro", aQuery.creationDate());
+            Specification<ScriptJpaEntity> spec = equalDate("dataCadastro", aQuery.creationDate());
             specifications = specifications == null ? spec : specifications.and(spec);
         }
         if (aQuery.customerEmail() != null) {
             Specification<ScriptJpaEntity> spec = (root, query, criteriaBuilder) -> {
                 Join<ScriptJpaEntity, CustomerJpaEntity> clienteJoin = root.join("cliente");
-                return criteriaBuilder.equal(clienteJoin.get("email"), aQuery.customerEmail());
+                return criteriaBuilder.like(clienteJoin.get("email"), SqlUtils.like(aQuery.customerEmail()));
             };
             specifications = specifications == null ? spec : specifications.and(spec);
         }
